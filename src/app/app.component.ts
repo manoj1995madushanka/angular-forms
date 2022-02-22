@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,12 @@ import { Component } from '@angular/core';
 export class AppComponent {
   suggestUserName() {
     const suggestedName = 'Superuser';
+  }
+
+  /**
+   * trigger when user click submit button
+   * */
+  onSubmit() {
+    console.log('user clicked submit.');
   }
 }
