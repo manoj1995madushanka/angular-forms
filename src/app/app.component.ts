@@ -1,4 +1,4 @@
-import {Component, ElementRef} from '@angular/core';
+import {Component, ElementRef, ViewChild} from '@angular/core';
 import {NgForm} from '@angular/forms';
 
 @Component({
@@ -7,6 +7,9 @@ import {NgForm} from '@angular/forms';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  @ViewChild('form') form: NgForm;
+
   suggestUserName() {
     const suggestedName = 'Superuser';
   }
@@ -14,8 +17,19 @@ export class AppComponent {
   /**
    * trigger when user click submit button
    * */
-  onSubmit(form: NgForm) {
+
+  /*onSubmit(form: NgForm) {
     console.log('user clicked submit.');
     console.log(form);
+  }*/
+
+  /**
+   * access ngForm using viewChild annotation
+   * this is better approach because we can access form before user submit,
+   * so we can add custom validation to form using this approach
+   * */
+  onSubmit() {
+    console.log('user clicked submit.');
+    console.log(this.form);
   }
 }
