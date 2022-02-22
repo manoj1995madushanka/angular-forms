@@ -16,6 +16,30 @@ export class AppComponent {
 
   suggestUserName() {
     const suggestedName = 'Superuser';
+
+    /* set value for entire form object
+    * this is not best approach because when user click button all other data will be reset
+    * */
+    /*this.form.setValue(
+      {
+        userData: {
+          username: suggestedName,
+          email: ''
+        },
+        secret: 'pet',
+        questionAnswer: '',
+        gender: 'male'
+      }
+    );*/
+
+    /* best approach for do it*/
+    this.form.form.patchValue(
+      {
+        userData: {
+          username: suggestedName
+        }
+      }
+    );
   }
 
   /**
