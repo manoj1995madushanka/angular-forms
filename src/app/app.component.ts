@@ -11,6 +11,14 @@ export class AppComponent {
   defaultQuestion = 'pet';
   answer: '';
   genders = ['male', 'female'];
+  user = {
+    username: '',
+    email: '',
+    secretQuestion: '',
+    answer: '',
+    gender: ''
+  };
+  submitted = false;
 
   @ViewChild('form') form: NgForm;
 
@@ -57,7 +65,16 @@ export class AppComponent {
    * so we can add custom validation to form using this approach
    * */
   onSubmit() {
+    this.submitted = true;
+
     console.log('user clicked submit.');
     console.log(this.form);
+    console.log(this.form.value.username);
+
+    this.user.username = this.form.value.userData.username;
+    this.user.email = this.form.value.userData.email;
+    this.user.secretQuestion = this.form.value.secret;
+    this.user.answer = this.form.value.questionAnswer; // will match to html template name attribute
+    this.user.gender = this.form.value.gender;
   }
 }
