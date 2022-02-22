@@ -23,7 +23,9 @@
                    class="form-control"
                    ngModel
                    name="email"
-                   required email>
+                   required email
+                   #email="ngModel">
+            <span class="help-block" *ngIf="!email.valid && email.touched">Please enter valid email.</span>
           </div>
 
         </div>
@@ -42,7 +44,8 @@
         <button
           class="btn btn-primary"
           type="submit"
-          [disabled]="!form.valid">Submit</button>
+          [disabled]="!form.valid">Submit
+        </button>
       </form>
     </div>
   </div>
