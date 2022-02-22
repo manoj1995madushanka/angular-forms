@@ -1,0 +1,2 @@
+ngModel and name attributes are used to access and assign form data
+ngSubmit will trigger when user click submit button of form
