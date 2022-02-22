@@ -76,5 +76,8 @@ export class AppComponent {
     this.user.secretQuestion = this.form.value.secret;
     this.user.answer = this.form.value.questionAnswer; // will match to html template name attribute
     this.user.gender = this.form.value.gender;
+
+    // below line will reset form
+    this.form.reset();
   }
 }
