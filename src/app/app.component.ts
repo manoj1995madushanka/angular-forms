@@ -1,4 +1,5 @@
 import {Component, ElementRef} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +14,8 @@ export class AppComponent {
   /**
    * trigger when user click submit button
    * */
-  onSubmit(formElementRef: HTMLFormElement) {
+  onSubmit(form: NgForm) {
     console.log('user clicked submit.');
-    console.log(formElementRef);
+    console.log(form);
   }
 }
